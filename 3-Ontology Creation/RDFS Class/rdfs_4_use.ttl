@@ -1,0 +1,26 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://gazawarontology.org/ontology/Casualties> a rdfs:Class ;
+    rdfs:label <Casualties> ;
+    rdfs:comment "Reported casualties from both sides of the conflict." .
+
+<http://gazawarontology.org/ontology/HumanitarianAspects> a rdfs:Class ;
+    rdfs:label <HumanitarianAspects> ;
+    rdfs:comment "Humanitarian issues that emerged during the Gaza war." .
+
+<http://gazawarontology.org/ontology/KeyFigures> a rdfs:Class ;
+    rdfs:label <KeyFigures> ;
+    rdfs:comment "Individuals who played significant roles in the Gaza war." .
+
+<http://gazawarontology.org/ontology/MilitaryOperations> a rdfs:Class ;
+    rdfs:label <MilitaryOperations> ;
+    rdfs:comment "Major military operations or campaigns during the Gaza war." .
+
+<http://gazawarontology.org/ontology/MilitaryOrganizations> a rdfs:Class ;
+    rdfs:label <MilitaryOrganizations> ;
+    rdfs:comment "Main military organizations or groups involved in the Gaza war." .
+
+<http://gazawarontology.org/ontology/WarTimeline> a rdfs:Class ;
+    rdfs:label <WarTimeline> ;
+    rdfs:comment "Key events and dates that marked the Gaza war." .
+

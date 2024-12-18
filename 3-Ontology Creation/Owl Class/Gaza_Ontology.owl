@@ -1,0 +1,174 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/gaza-ontology#> .
+
+# Classes
+ex:NewsArticle rdf:type rdfs:Class ;
+  rdfs:label "News Article"@en .
+
+ex:Person rdf:type rdfs:Class ;
+  rdfs:label "Person"@en .
+
+ex:Politician rdfs:subClassOf ex:Person ;
+  rdfs:label "Politician"@en .
+
+ex:Civilian rdfs:subClassOf ex:Person ;
+  rdfs:label "Civilian"@en .
+
+ex:Organization rdf:type rdfs:Class ;
+  rdfs:label "Organization"@en .
+
+ex:MilitaryGroup rdfs:subClassOf ex:Organization ;
+  rdfs:label "Military Group"@en .
+
+ex:ArmedForces rdfs:subClassOf ex:Organization ;
+  rdfs:label "Armed Forces"@en .
+
+ex:Location rdf:type rdfs:Class ;
+  rdfs:label "Location"@en .
+
+ex:City rdfs:subClassOf ex:Location ;
+  rdfs:label "City"@en .
+
+ex:Neighborhood rdfs:subClassOf ex:Location ;
+  rdfs:label "Neighborhood"@en .
+
+ex:Event rdf:type rdfs:Class ;
+  rdfs:label "Event"@en .
+
+ex:MilitaryOperation rdfs:subClassOf ex:Event ;
+  rdfs:label "Military Operation"@en .
+
+ex:Protest rdfs:subClassOf ex:Event ;
+  rdfs:label "Protest"@en .
+
+ex:Ceasefire rdfs:subClassOf ex:Event ;
+  rdfs:label "Ceasefire"@en .
+
+ex:DiplomaticMeeting rdfs:subClassOf ex:Event ;
+  rdfs:label "Diplomatic Meeting"@en .
+
+ex:Sentiment rdf:type rdfs:Class ;
+  rdfs:label "Sentiment"@en .
+
+ex:Positive rdfs:subClassOf ex:Sentiment ;
+  rdfs:label "Positive"@en .
+
+ex:Negative rdfs:subClassOf ex:Sentiment ;
+  rdfs:label "Negative"@en .
+
+ex:Neutral rdfs:subClassOf ex:Sentiment ;
+  rdfs:label "Neutral"@en .
+
+# Object Properties
+ex:containsEntity rdf:type owl:ObjectProperty ;
+  rdfs:label "contains entity"@en ;
+  rdfs:domain ex:NewsArticle ;
+  rdfs:range [
+    rdf:type owl:Class ;
+    owl:unionOf (
+      ex:Person
+      ex:Organization
+      ex:Location
+    )
+  ] .
+
+ex:mentionsEvent rdf:type owl:ObjectProperty ;
+  rdfs:label "mentions event"@en ;
+  rdfs:domain ex:NewsArticle ;
+  rdfs:range ex:Event .
+
+ex:hasLocation rdf:type owl:ObjectProperty ;
+  rdfs:label "has location"@en ;
+  rdfs:domain ex:Event ;
+  rdfs:range ex:Location .
+
+ex:hasParticipant rdf:type owl:ObjectProperty ;
+  rdfs:label "has participant"@en ;
+  rdfs:domain ex:Event ;
+  rdfs:range [
+    rdf:type owl:Class ;
+    owl:unionOf (
+      ex:Person
+      ex:Organization
+    )
+  ] .
+
+ex:hasCasualties rdf:type owl:ObjectProperty ;
+  rdfs:label "has casualties"@en ;
+  rdfs:domain ex:Event ;
+  rdfs:range xsd:integer .
+
+ex:hasActor rdf:type owl:ObjectProperty ;
+  rdfs:label "has actor"@en ;
+  rdfs:domain ex:Event ;
+  rdfs:range [
+    rdf:type owl:Class ;
+    owl:unionOf (
+      ex:Person
+      ex:Organization
+    )
+  ] .
+
+ex:hasCause rdf:type owl:ObjectProperty ;
+  rdfs:label "has cause"@en ;
+  rdfs:domain ex:Event ;
+  rdfs:range ex:Event .
+
+ex:hasOutcome rdf:type owl:ObjectProperty ;
+  rdfs:label "has outcome"@en ;
+  rdfs:domain ex:Event ;
+  rdfs:range ex:Event .
+
+ex:isPartOf rdf:type owl:ObjectProperty ;
+  rdfs:label "is part of"@en ;
+  rdfs:domain ex:Location ;
+  rdfs:range ex:Location .
+
+ex:hasSentiment rdf:type owl:ObjectProperty ;
+  rdfs:label "has sentiment"@en ;
+  rdfs:domain ex:NewsArticle ;
+  rdfs:range ex:Sentiment .
+
+# Data Properties
+ex:hasDate rdf:type owl:DatatypeProperty ;
+  rdfs:label "has date"@en ;
+  rdfs:domain ex:NewsArticle ;
+  rdfs:range xsd:date .
+
+ex:hasTitle rdf:type owl:DatatypeProperty ;
+  rdfs:label "has title"@en ;
+  rdfs:domain ex:NewsArticle ;
+  rdfs:range xsd:string .
+
+ex:hasText rdf:type owl:DatatypeProperty ;
+  rdfs:label "has text"@en ;
+  rdfs:domain ex:NewsArticle ;
+  rdfs:range xsd:string .
+
+ex:hasArticleURL rdf:type owl:DatatypeProperty ;
+  rdfs:label "has article URL"@en ;
+  rdfs:domain ex:NewsArticle ;
+  rdfs:range xsd:anyURI .
+
+ex:hasImageURL rdf:type owl:DatatypeProperty ;
+  rdfs:label "has image URL"@en ;
+  rdfs:domain ex:NewsArticle ;
+  rdfs:range xsd:anyURI .
+
+ex:personName rdf:type owl:DatatypeProperty ;
+  rdfs:label "person name"@en ;
+  rdfs:domain ex:Person ;
+  rdfs:range xsd:string .
+
+ex:organizationName rdf:type owl:DatatypeProperty ;
+  rdfs:label "organization name"@en ;
+  rdfs:domain ex:Organization ;
+  rdfs:range xsd:string .
+
+ex:locationName rdf:type owl:DatatypeProperty ;
+  rdfs:label "location name"@en ;
+  rdfs:domain ex:Location ;
+  rdfs:range xsd:string .
