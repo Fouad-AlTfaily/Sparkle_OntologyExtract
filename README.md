@@ -1,8 +1,8 @@
-# Gaza-Web-ontology
-Gaza Web Ontology: Curating Gaza conflict data with Semantic Web technology. Tracks events, locations, and entities involved
+# Extract-Web-ontology
+Extract Web Ontology: Curating conflict data with Semantic Web technology. Tracks events, locations, and entities involved
 
 
-Gaza Web Ontology is a repository focused on developing an ontology centered around the conflict and events in the Gaza region. This project aims to create a structured framework using Semantic Web technologies to categorize and organize information related to the Gaza conflict, including historical events, geographical locations, involved parties, and other relevant data. The ontology serves as a resource for understanding the complexities of the conflict and its impact, facilitating data integration and semantic search.
+Extract Web Ontology is a repository focused on developing an ontology centered around the conflict and events in the Gaza region. This project aims to create a structured framework using Semantic Web technologies to categorize and organize information related to the Gaza conflict, including historical events, geographical locations, involved parties, and other relevant data. The ontology serves as a resource for understanding the complexities of the conflict and its impact, facilitating data integration and semantic search.
 
 The project follows these key steps:
 1- Data Collection: Gathering relevant data, including historical records, news articles, reports, and geospatial information.
