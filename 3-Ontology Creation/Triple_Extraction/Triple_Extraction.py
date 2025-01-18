@@ -12,7 +12,7 @@ g = Graph()
 ex = Namespace("http://example.com/gaza-ontology#")
 
 # Load the ontology from the gaza4.owl file
-g.parse("C:/Users/Fouad/Desktop/Gaza_Ontology/3-Ontology Creation/Owl_RDF_Classes/Gaza_Ontology.owl", format="turtle")
+g.parse("OwlClassYouCreated.owl", format="turtle")
 
 # Dictionary to store entity URIs
 entity_uris = {}
